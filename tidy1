@@ -1,0 +1,19 @@
+"""
+os.system(“”sudo apt-get install “ + to_be_install_packages)
+Python version 3: use subprocess instead of os
+(in subshell) os.system =  subprocess.run (does not use shell, runs the program)
+eg:
+os.system(“python -version”)
+subprocess.run([“python”, “-version”])
+"""
+
+#Handy Tidy : eg (in Debian Linux environment):
+def clean_environment():
+    os.system("sudo apt-get autoremove")
+    os.system("sudo apt-get autoclean")
+
+
+def update_environment():
+    os.system("sudo apt-get update")              #:  for old/new packages
+    os.system("sudo apt-get upgrade")             #:  update current OS but not to higher version
+    os.system("sudo apt-get dist-upgrade")        #:  download and install for all packages
